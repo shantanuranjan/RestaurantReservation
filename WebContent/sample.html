@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html data-ng-app="restApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" href="./css/navigationbar.css" />
+<link rel="stylesheet" type="text/css" href="./css/hero.css" />
+<link rel="stylesheet" type="text/css" href="./css/menu.css" />
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" href="./css/form.css" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
+<link rel="stylesheet" href="./css/datepicker.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" media="screen and (max-width: Xpx) and (min-width: Ypx)" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" href="./css/responsiveform.css">
+<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="./css/responsiveform1.css" />
+<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="./css/responsiveform2.css" />
+<link rel="stylesheet" media="screen and (max-width: 350px)" href="./css/responsiveform3.css" />
+</head>
+
+<body data-ng-controller="OwnerCtrl as octrl">
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle" class="mainmenu-icon">&#9776;</label>
+
+
+<header style="background-color: white;">
+<div id="brand"><a href=""><img src="./images/logo.png" alt="Resto" /></a></div>
+</header>
+<nav class="mainmenu">
+	<ul>
+		
+		<li><a href="#dishes" >Menu</a></li>
+		<li><a href="#reserve" >Reservations</a></li>
+		<li><a  data-target="#myModal" data-toggle="modal">Login</a></li>
+		<li><a href="#contactus">Contact US</a></li>
+	</ul>
+</nav>
+<!-- ************************************************************ start hero**************************************************  -->
+	<section class="hero">
+		<div class="caption">
+			<h3>Resto Restaurant</h3>
+			<h4>
+				<span class="rsep"></span>
+				resto restaurant home page website with French Cuisine
+				<span class="lsep"></span>
+			</h4>
+			
+		</div>
+	</section>
+<!--**************************************************************end hero **************************************************** -->
+
+<!--************************************************************* Menu Item**************************************************** -->
+<section class="menu" id="dishes">
+	
+		<div class="">
+			<div class="menu_title">
+				<h2>The Menu</h2>
+			</div>
+			<div class="divContainer" style="width:300px; border: 0px solid;margin-left: 30px">
+    			<div class="divContent">
+						<h3 class="item_name" >Voluptate cillum fugiat.</h3>
+						<p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
+						<h4 class="price">$50</h4>
+						<span class="separator"></span>
+    			</div>
+    			<div class="divContent">
+						<h3 class="item_name" >Donec sodales magna.</h3>
+						<p class="item_desc">Tuna, Sweetcorn, Cheese.</p>
+						<h4 class="price">$25</h4>
+						<span class="separator"></span>
+    			</div>
+    			<div class="divContent">
+						<h3 class="item_name" >Metus varius laoreet.</h3>
+						<p class="item_desc">Chicken, mozzarella cheese, onions.</p>
+						<h4 class="price">$62</h4>
+						<span class="separator"></span>
+    			</div>
+    			<div class="divContent">
+						<h3 class="item_name" >Saugue velit cursus.</h3>
+						<p class="item_desc">Pineapple, Minced Beef, Cheese.</p>
+						<h4 class="price">$30</h4>
+						<span class="separator"></span>
+    			</div>
+			</div>
+			<div class="divContainer" style="width:300px;border: 0px solid;float: right;">
+    			<div class="divContent">
+					<h3 class="item_name" >Arcu pede enim justo.</h3>
+					<p class="item_desc">Tuna, Sweetcorn, Cheese.</p>
+					<h4 class="price">$45</h4>
+					<span class="separator"></span>
+    			</div>
+    			<div class="divContent">
+					<h3 class="item_name" >Cras dapibussemper nisi.</h3>
+					<p class="item_desc">Pineapple, Minced Beef, Cheese.</p>
+					<h4 class="price">$32</h4>
+					<span class="separator"></span>
+    			</div>
+    			<div class="divContent">
+					<h3 class="item_name" >Quam semper libero.</h3>
+					<p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
+					<h4 class="price">$15</h4>
+					<span class="separator"></span>
+    			</div>
+    			<div class="divContent">
+					<h3 class="item_name" >Nam eget dui Etiam.</h3>
+					<p class="item_desc">Chicken, mozzarella cheese, onions.</p>
+					<h4 class="price">$35</h4>
+					<span class="separator"></span>
+    			</div>
+			</div>
+			
+		</div>
+</section>
+<!--******************************************************* Ends Menu********************************************************** -->
+
+
+<!--***************************************************** Reservation Form***************************************************** -->
+
+<section class="reservation" id="reserve">		
+			<div class="menu_title">
+				<h2>Reservation</h2>
+			</div>
+		<form class="formclass" data-ng-submit="octrl.reserve()">
+			<div class="formcolumn">
+				<label for="reservationdate">Reservation Date</label>
+				<div class="inner-addon left-addon">
+					<input type="text" placeholder="   Reserve date"
+							data-ng-model="octrl.newreserve.reservationdate"
+							class="form-control " id="reservationdate"> <i
+							class="glyphicon glyphicon-calendar"></i>
+				</div>							
+				<label for="email">Email Address</label>
+				<input type="text" class="form-control"
+										data-ng-model="octrl.newreserve.email" id="email" name="email"
+										placeholder="Email Address">	
+				<label for="firstname">First Name</label>
+						<input type="text" class="form-control" id="firstname"
+											data-ng-model="octrl.newreserve.firstname" name="firstname"
+											placeholder="Enter your FirstName">
+				
+			</div>
+			<div class="formcolumn">
+				<label for="reservationtime">Reservation Time</label>
+					<input type="text" class="form-control"
+											data-ng-model="octrl.newreserve.reservationtime"
+											id="reservationtime" name="reservationtime"
+											placeholder="Reserve time">
+				<label for="partysize">Party Size</label>	
+					<input type="text" data-ng-model="octrl.newreserve.partysize"
+						class="form-control" id="partysize" name="partysize" placeholder="Party Size">	
+						<label for="lastname">Last Name</label>
+						<input type="text" class="form-control" id="lastname"
+												data-ng-model="octrl.newreserve.lastname" name="lastname"
+												placeholder="Enter your LastName">
+									
+			</div>												
+			<div class="formcolumn">
+						
+						<label for="specialneeds">Special Needs</label>
+						<input type="text" data-ng-model="octrl.newreserve.specialneeds"
+							class="form-control" id="specialneeds" name="specialneeds" placeholder="Any special Request?">							
+						
+						<label for="phone"><b> Phone</b></label>									
+									<input type="text" class="form-control"
+										data-ng-model="octrl.newreserve.phone" id="phone" name="phone"
+										placeholder="Contact No">
+								
+							
+			</div>
+			
+				
+				<button type="submit" class="btn btn-block btn-info btn-sm"
+											id="reserve" value="Reserve">
+											<span class="glyphicon glyphicon-glass"></span> Reserve
+										</button>
+										<a href="#" title="change existing reservation"
+										id="updateReserve"  data-target="#changereserve" data-toggle="modal">Change Existing Reservation?</a>
+			
+		</form>
+		
+</section>
+
+<!--************************************************* Reservation Form Ends**************************************************** -->
+
+
+<!--*************************************************** Contact US form ********************************************************-->
+<section class="contactus" id="contactus">
+		<div class="menu_title">
+				<h2>Contact US</h2>
+		</div>
+		
+		<form data-ng-submit="octrl.sendMessage()" class="formclass">
+		        	<table  class="table">
+		        	  <thead>
+	                    <tr><td colspan="5" class="headingstyle">Send Message</td><tr>
+	                    <tr><td colspan="2"><span id="errortext2"></span></td></tr>
+                    </thead>
+		        	<tbody>
+		        	 <tr>
+				  		<td align="right"><b>Subject:</b> </td>
+				  		<td>
+				      		<div class="col-sm-12">
+					    		<input type="text" class="form-control" data-ng-model="octrl.newcontact.subject" id="subject" placeholder="subject" >
+				      		</div>
+				  		</td>
+			        </tr>
+			        <tr>
+                        <td align="right"><b>Message:</b></td>
+                        <td>
+                             <div class="col-sm-12">
+                               <textarea rows="5" cols="20" class="form-control" data-ng-model="octrl.newcontact.message" id="message" placeholder="Enter mesaage..."></textarea>
+                            </div>
+                        </td>
+                    </tr>
+				<tr>
+				  <td align="right"><b>Name: </b></td>
+				  <td>
+				      <div class="col-sm-12">
+					    <input type="text" id="name" class="form-control" data-ng-model="octrl.newcontact.name"  placeholder="name" >
+				      </div>
+				  </td>
+			       </tr>
+			       <tr>
+				  <td align="right"><b>Phone:</b> </td>
+				  <td>
+				     <div class="col-sm-12">
+					    <input type="text" id="phone" class="form-control" data-ng-model="octrl.newcontact.phone" placeholder="phone">
+				      </div>
+				  </td>
+			       </tr>
+				<tr>
+				  <td align="right"><b>Email:</b> </td>
+				  <td>
+				      <div class="col-sm-12">
+					    <input type="text" id="email" class="form-control" data-ng-model="octrl.newcontact.email" placeholder="Email">
+				      </div>
+				  </td>
+			       </tr>
+		        	
+		        	<tr>
+				    	<td colspan="2" align="center">
+						<button type="submit" class="btn btn-block btn-info btn-sm"  style="width: 30%">
+						    Send
+						</button>
+				    	</td>
+					</tr>
+		        	</tbody>
+		        	</table>
+		        </form>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</section>
+<!--*************************************************** ContactUS ends********************************************************* -->
+
+
+<!--************************************************* change Reservation Bootbox modal***************************************** -->
+<section id="changereservation">
+<!-- Modal -->
+ <div class="modal fade" id="changereserve" role="dialog" style="width: 100%">
+    <div class="modal-dialog" style="width: 80%">    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+        </div>
+        <div class="modal-body">       
+        	<table class="table" style="width: 100%">
+						<thead>
+							<tr>
+								<th colspan="2">Reservation Information</th>
+							</tr>
+							<tr>
+								<th colspan="2"><span id="errortext2" style="color: red"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="right"><b>Reservation ID</b></td>
+								<td><input type="text" data-ng-model="octrl.reservationid" class="form-control"
+									placeholder="Enter Reservation id" required></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="right">
+									<button class="btn btn-block btn-info btn-sm" data-ng-click="octrl.searchReservation()">Search
+									Reservation</button>
+								</td>
+							</tr>
+						</tbody>
+			</table>
+        <form name="updateReservation" id="updateReservation" class="formclass"
+									data-ng-submit="octrl.updateReservation()">
+									
+												<b>Update Reservation</b>									
+								<div class="formcolumnupdate">
+										<label for="updatereservationdate"><b>Date</b></label>												
+													<div class="inner-addon left-addon">
+														<input type="text" placeholder="Reserve date"
+															class="form-control " id="updatereservationdate"
+															data-ng-model="octrl.updatereserve.reservationdate"
+															required> <i class="glyphicon glyphicon-calendar"></i>
+													</div>
+										<label for="updatefirstname"><b>FirstName</b></label>
+												<input type="text" class="form-control"
+													id="updatefirstname"
+													data-ng-model="octrl.updatereserve.firstname"
+													name="firstname" placeholder="Enter your FirstName"
+													required>
+										</div>
+									<div class="formcolumnupdate">				
+										<label for="updatepartysize"><b>Party Size</b></label>	
+										<input type="text"
+													data-ng-model="octrl.updatereserve.partysize"
+													class="form-control" id="updatepartysize"
+													name="updatepartysize" placeholder="Party Size" required>
+										
+										<label for="updateemail"><b> Email</b></label>
+											<input type="text" class="form-control"
+													data-ng-model="octrl.updatereserve.email" id="updateemail"
+													name="updateemail" placeholder="Enter your Email Address">
+								</div>
+								<div class="formcolumnupdate">				
+											<label for="updatereservationtime">	<b>Time</b></label>
+												<input type="text" class="form-control"
+													data-ng-model="octrl.updatereserve.reservationtime"
+													id="updatereservationtime" name="reservationtime"
+													placeholder="Enter time" required>
+											
+											
+										<label for="updatelastname"><b>LastName</b></label>
+												<input type="text" class="form-control"
+													id="updatelastname"
+													data-ng-model="octrl.updatereserve.lastname"
+													name="lastname" placeholder="Enter your LastName" required>
+								</div>	
+								<div class="formcolumnupdate">	
+										<label for="updatephone"><b> Phone</b></label>
+											<input type="text" class="form-control"
+													data-ng-model="octrl.updatereserve.phone" id="updatephone"
+													name="updatephone" placeholder="Enter Your Contact No"
+													required>
+													
+											<label for="updatespecialneeds"><b> Special Needs</b></label>
+										
+												<input type="text"
+													data-ng-model="octrl.updatereserve.specialneeds"
+													class="form-control" id="updatespecialneeds"
+													name="updatespecialneeds"
+													placeholder="Any special Request?">	
+								</div>
+							
+										<button type="submit" disabled="disabled"
+														class="btn btn-block btn-info btn-sm" id="updatereserve"
+														value="updatereserve">
+														<span class="glyphicon glyphicon-glass"></span> Update
+														Reservation
+													</button>
+								</form>
+        </div>
+       </div>
+     </div>
+    </div>
+</section>
+<!--************************************* Change Reservation bootbox modal ends here****************************************** -->
+
+
+<!--******************************************** login bootbox modal********************************************************** -->
+<section id="login" class="login">
+	<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>         
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered owner">
+						<thead>
+							<tr>
+								<th colspan="2">Login Information</th>
+							<tr>
+							<tr>
+								<th colspan="2"><span id="errortext3" style="color: red;"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="right"><b> Username</b></td>
+								<td><input type="text" data-ng-model="octrl.username"
+									class="form-control" placeholder="Enter username" required>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><b> Password</b></td>
+								<td><input type="password" data-ng-model="octrl.password"
+									class="form-control" placeholder="Enter password" required>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="1" align="right">
+									<button class="btn btn-block btn-info btn-sm"
+										data-ng-click="octrl.getOwner()">
+										Login<span class="glyphicon glyphicon-log-in"></span>
+									</button>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+        </div>      
+      </div>      
+    </div>
+  </div>
+</section>
+<!--********************************************* login bootbox modal ends here************************************************ -->
+
+<!-- ********************************************footer starts here******************************************************************* -->
+<footer>
+		<div class="wrapper">
+			<!-- adresse1  -->
+			<section class="adress">
+				<p>New York Restaurant</p> 
+				<p class="location">3926 Anmoore Road<br/>
+				New York, NY 10014</p>
+				<p class="phone">718-749-1714</p>
+			</section>
+
+			<!--  adress2  -->
+			<section class="adress">
+				<p>France Restaurant</p>
+				<p class="location">68, rue  de la Couronne<br/>
+				75002 PARIS </p>
+				<p class="phone">02.94.23.69.56</p>
+			</section>
+
+			<!--  footer navigation  -->
+			<section class="footer_nav">
+				<nav>
+					<ul>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Careers</a></li>
+						<li><a href="">Privacy Policy</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</nav>
+			</section>
+
+			<!--  footer copyrights  -->
+			<section class="copyrights">
+				<img src="./images/footer_logo.png" class="footer_logo" alt="" title="">
+				<p>© All Rights Reserved 2014.</p>
+				<p>Find  More at <a href="http://pixelhint.com">Pixelhint.com</a></p>	
+			</section>
+		</div>
+	</footer><!--  end footer  -->
+
+
+
+<!-- ************************************************footer ends here -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="./js/module1.js"></script>
+<script src="https://code.angularjs.org/1.3.15/angular.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/controller.js"></script>
+<script type="text/javascript" src="./js/bootbox.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+</html>

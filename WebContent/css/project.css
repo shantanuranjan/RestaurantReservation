@@ -1,0 +1,232 @@
+
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+.tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+    }
+.tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+
+.tab-links a {
+            padding:4px 30px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+.tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+.tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+         .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+.tab {
+            display:none;
+        }
+ 
+.tab.active {
+            display:block;
+        }
+
+body { width: 100%; height: 100%; margin: 0px; padding: 0px;  background:#FAFAFA}
+.centered{
+    position: absolute;
+    height: auto;
+    width: 400px;
+    margin: -100px 0 0 -200px;
+    top: 20%;
+    left: 50%;
+    background-color: #FFFFFF;
+    border-radius: 10px
+}
+
+.newcentered1{
+    position: absolute;
+    height: auto;
+    width: 650px;
+    margin: -100px 0 0 -200px;
+    top: 20%;
+    left: 15%;
+    background-color: #FFFFFF
+}
+
+.newcentered2{
+    position: absolute;
+    height: auto;
+    width: 300px;
+    margin: -100px 0 0 -200px;
+    top: 20%;
+    left: 66%;
+    background-color: #FFFFFF
+}
+
+.newcentered3{
+    position: absolute;
+    height: auto;
+    width: 300px;
+    margin: -100px 0 0 -200px;
+    top: 20%;
+    left: 90%;
+    background-color: #FFFFFF
+}
+
+table th,table td{
+	width:auto !important; 
+}
+
+.post_artist th:first-child,.post_artist td:first-child{
+	width:20% !important; 
+}
+
+.post_concert th:first-child,.post_concert td:first-child{
+	width:20% !important; 
+}
+
+.add_concert th:first-child,.add_concert td:first-child{
+	width:20% !important; 
+}
+#genre_table th:first-child,#genre_table td:first-child{
+	width:20% !important; 
+}
+
+#sub_genre_table th:first-child,#sub_genre_table td:first-child{
+	width:20% !important; 
+}
+
+.text_label{
+text-align: center;background-color:#337ab7;color:white;text-shadow:5px 5px 5px red;
+}
+.text_label1{
+text-align: center !important;background-color:#ddd !important;color:black !important;text-shadow:5px 5px 5px red !important;
+}
+.btn-grey{
+    background-color: #ddd !important;
+    color: black !important;
+    border-color: grey !important;
+}
+.btn-grey:hover{
+    background-color: #CCCCCC !important;
+}
+.container{
+    width:100%;
+    max-width:100%;
+    background-color: #e4e4e4;
+    margin-bottom: 10px;margin-top: 10px;
+    padding-bottom: 5px;padding-top: 5px;
+    }
+    
+.pagewrapper{
+    padding-left:0;
+    padding-right:0
+}
+.datawrapper{
+    background:#fff;
+    border-radius:5px;
+    border:1px solid #e4e4e4;
+    padding:10px;
+}
+
+* + HTML .clearfix{
+    clear:both;
+    width:100%;
+}
+
+.active{
+    display: block;
+}
+
+.inactive{
+    display: none;
+}
+
+.shadow {
+   box-shadow: 10px 10px 5px #888888;
+}
+.allshadow{
+    padding:2px;
+    box-shadow: 0 0 20px #888888;
+}
+
+.change_table table{
+border-style:hidden;
+background-color: #FFFAF0;
+}
+.change_table table tr,td{
+border-style:hidden;
+}
+
+.recommended{
+width : 24%;
+display:inline;
+float : left;
+margin :auto;
+}
+
+.post{
+width : 49%;
+display:inline-block;
+}
+.public-post{
+width : 24%;
+display:inline;
+float : right;
+}
+.upcoming-concerts{
+margin-top:10px;
+}
+.smalltable{
+width :80%;
+}
+.public-rate-posts{
+margin-top:10px;
+}
+.border_list{
+    margin: 5px;
+    border-color: grey;
+    box-shadow: 10px 10px 5px #888888;
+    
+}
+
+.tablefont{
+    width: 100%;
+    font-size: medium;
+    font-family: cursive;
+    text-align: left;
+}
+.tablefont td:last-child{
+    text-align: center !important;
+}
+
+.adjust_table th:first-child,.adjust_table td:first-child{
+	width:25% !important; 
+}
+
+#attended_concerts_table tr:hover{
+    cursor: pointer;
+}
+
+.nodisplay{
+	display:none;
+}

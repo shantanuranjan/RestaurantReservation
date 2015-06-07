@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html data-ng-app="restApp">
+<head>
+<meta charset="UTF-8">
+<title>Restaurant Reservation System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
+<link rel="stylesheet" href="./css/datepicker.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body class="bodyclass" data-ng-controller="OwnerCtrl as octrl">
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" title="Eatery"> <span
+					class="glyphicon glyphicon-cutlery"></span>Eatery
+				</a>
+				<h3 class="h3style">Restaurant Reservation System</h3>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="tabs">
+			<ul class="tab-links nav nav-tabs nav-justified">
+				<li class="active"><a href="#tab1" data-toggle="tab">Guest</a></li>
+				<li><a href="#tab2" data-toggle="tab">Owner <span
+						class="glyphicon glyphicon-user"></span></a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="tab1" class="tab active">
+
+					<form data-ng-submit="octrl.reserve()">
+						<table class="table table-bordered guest">
+							<thead>
+								<tr>
+									<th colspan="4"><b>Make a Reservation</b></th>
+								<tr>
+								<tr>
+									<th colspan="4"><span id="errortext1"></span></th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<td><b>Date:</b></td>
+									<td>
+										<div class="inner-addon left-addon">
+											<input type="text" placeholder="Reserve date"
+												data-ng-model="octrl.newreserve.reservationdate"
+												class="form-control " id="reservationdate"> <i
+												class="glyphicon glyphicon-calendar"></i>
+										</div>
+									</td>
+									<td><b>Time</b></td>
+									<td><input type="text" class="form-control"
+										data-ng-model="octrl.newreserve.reservationtime"
+										id="reservationtime" name="reservationtime"
+										placeholder="Enter time"></td>
+								</tr>
+
+								<tr>
+									<td><b>FirstName</b></td>
+									<td><input type="text" class="form-control" id="firstname"
+										data-ng-model="octrl.newreserve.firstname" name="firstname"
+										placeholder="Enter your FirstName"></td>
+									<td><b>LastName</b></td>
+									<td><input type="text" class="form-control" id="lastname"
+										data-ng-model="octrl.newreserve.lastname" name="lastname"
+										placeholder="Enter your LastName"></td>
+								</tr>
+
+								<tr>
+									<td colspan="4"><b> Phone</b></td>
+								</tr>
+								<tr>
+									<td colspan="4"><input type="text" class="form-control"
+										data-ng-model="octrl.newreserve.phone" id="phone" name="phone"
+										placeholder="Enter Your Contact No"></td>
+								</tr>
+								<tr>
+									<td colspan="4"><b> Email</b></td>
+								</tr>
+								<tr>
+									<td colspan="4"><input type="text" class="form-control"
+										data-ng-model="octrl.newreserve.email" id="email" name="email"
+										placeholder="Enter your Email Address"></td>
+								</tr>
+								<tr>
+									<td><b> Party Size</b></td>
+									<td><b> Special Needs</b></td>
+								</tr>
+								<tr>
+									<td><input type="text"
+										data-ng-model="octrl.newreserve.partysize"
+										class="form-control" id="partysize" name="partysize"
+										placeholder="Party Size"></td>
+									<td colspan="2"><input type="text"
+										data-ng-model="octrl.newreserve.specialneeds"
+										class="form-control" id="specialneeds" name="specialneeds"
+										placeholder="Any special Request?"></td>
+								</tr>
+								<tr>
+									<td>
+										<button type="submit" class="btn btn-block btn-info btn-sm"
+											id="reserve" value="Reserve">
+											<span class="glyphicon glyphicon-glass"></span> Reserve
+										</button>
+									</td>
+									<td><a href="#" title="change existing reservation"
+										id="updateReserve">Change Existing Reservation?</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div id="myModal" class="modal fade">
+					<div class="modal-dialog" style="width: 60%">
+						<div class="modal-content" style="width: 100%">
+							<!-- dialog body -->
+							<div class="modal-body" style="width: 100%">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<table class="table" style="width: 100%">
+									<thead>
+										<tr>
+											<th colspan="2">Reservation Information</th>
+										<tr>
+										<tr>
+											<th colspan="2"><span id="errortext2"></span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td align="right"><b>Reservation ID</b></td>
+											<td><input type="text"
+												data-ng-model="octrl.reservationid" class="form-control"
+												placeholder="Enter Reservation id" required></td>
+										</tr>
+
+										<tr>
+											<td colspan="2" align="right">
+												<button class="btn btn-block btn-info btn-sm"
+													data-ng-click="octrl.searchReservation()">Search
+													Reservation</button>
+
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<form name="updateReservation" id="updateReservation"
+									data-ng-submit="octrl.updateReservation()">
+									<table class="table table-bordered guest">
+										<thead>
+											<tr>
+												<th colspan="4"><b>Update Reservation</b></th>
+											<tr>
+											<tr>
+												<th colspan="4"><span id="errortext1"></span></th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td><b>Date:</b></td>
+												<td>
+													<div class="inner-addon left-addon">
+														<input type="text" placeholder="Reserve date"
+															class="form-control " id="updatereservationdate"
+															data-ng-model="octrl.updatereserve.reservationdate"
+															required> <i class="glyphicon glyphicon-calendar"></i>
+													</div>
+												</td>
+												<td><b>Time</b></td>
+												<td><input type="text" class="form-control"
+													data-ng-model="octrl.updatereserve.reservationtime"
+													id="updatereservationtime" name="reservationtime"
+													placeholder="Enter time" required></td>
+											</tr>
+											<tr>
+												<td><b>FirstName</b></td>
+												<td><input type="text" class="form-control"
+													id="updatefirstname"
+													data-ng-model="octrl.updatereserve.firstname"
+													name="firstname" placeholder="Enter your FirstName"
+													required></td>
+												<td><b>LastName</b></td>
+												<td><input type="text" class="form-control"
+													id="updatelastname"
+													data-ng-model="octrl.updatereserve.lastname"
+													name="lastname" placeholder="Enter your LastName" required>
+												</td>
+											</tr>
+
+											<tr>
+												<td colspan="4"><b> Phone</b></td>
+											</tr>
+											<tr>
+												<td colspan="4"><input type="text" class="form-control"
+													data-ng-model="octrl.updatereserve.phone" id="updatephone"
+													name="updatephone" placeholder="Enter Your Contact No"
+													required></td>
+											</tr>
+											<tr>
+												<td colspan="4"><b> Email</b></td>
+											</tr>
+											<tr>
+												<td colspan="4"><input type="text" class="form-control"
+													data-ng-model="octrl.updatereserve.email" id="updateemail"
+													name="updateemail" placeholder="Enter your Email Address">
+												</td>
+											</tr>
+											<tr>
+												<td><b> Party Size</b></td>
+												<td><b> Special Needs</b></td>
+											</tr>
+											<tr>
+												<td><input type="text"
+													data-ng-model="octrl.updatereserve.partysize"
+													class="form-control" id="updatepartysize"
+													name="updatepartysize" placeholder="Party Size" required>
+												</td>
+												<td colspan="2"><input type="text"
+													data-ng-model="octrl.updatereserve.specialneeds"
+													class="form-control" id="updatespecialneeds"
+													name="updatespecialneeds"
+													placeholder="Any special Request?"></td>
+											</tr>
+											<tr>
+												<td>
+													<button type="submit" disabled="disabled"
+														class="btn btn-block btn-info btn-sm" id="updatereserve"
+														value="updatereserve">
+														<span class="glyphicon glyphicon-glass"></span> Update
+														Reservation
+													</button>
+												</td>
+										</tbody>
+									</table>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div id="tab2" class="tab">
+					<table class="table table-bordered owner">
+						<thead>
+							<tr>
+								<th colspan="2">Login Information</th>
+							<tr>
+							<tr>
+								<th colspan="2"><span id="errortext2"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="right"><b> Username</b></td>
+								<td><input type="text" data-ng-model="octrl.username"
+									class="form-control" placeholder="Enter username" required>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><b> Password</b></td>
+								<td><input type="password" data-ng-model="octrl.password"
+									class="form-control" placeholder="Enter password" required>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="1" align="right">
+									<button class="btn btn-block btn-info btn-sm"
+										data-ng-click="octrl.getOwner()">
+										Login<span class="glyphicon glyphicon-log-in"></span>
+									</button>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="./js/module1.js"></script>
+
+<script src="https://code.angularjs.org/1.3.15/angular.min.js"></script>
+
+<!-- Load jQuery and bootstrap datepicker scripts -->
+
+<script type="text/javascript" src="./js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/controller.js"></script>
+<script type="text/javascript" src="./js/bootbox.min.js"></script>
+
+</html>

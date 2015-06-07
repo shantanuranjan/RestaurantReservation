@@ -1,0 +1,16 @@
+html,body{height:100%;background:#E1FAFF;}
+.container{width:100%;max-width:100%;background-color: #e4e4e4;margin-bottom: 10px;margin-top: 10px;padding-bottom: 5px;padding-top: 5px}
+.logout{text-align: right}
+.header{background:#d4e6ed url('../../Images/banner.png') no-repeat !important;padding:10px 0;}
+.pagewrapper{padding-left:0;padding-right:0}
+.datawrapper{background:#fff;border-radius:5px; border:1px solid #e4e4e4;padding:10px;height:100%}
+* + HTML .clearfix{clear:both;width:100%;}
+.clientName{font-size: 20px}
+table th, table td {width: auto !important;}
+table th:first-child,table td:first-child{width: 30% !important;}
+.half_table{width: 49% !important}
+.rgt{float:right}
+.lft{float:left}
+.product_table th:first-child,.product_table td:first-child{width:90% !important}
+.smalltable{width:30%}
+#errortext{color: red}

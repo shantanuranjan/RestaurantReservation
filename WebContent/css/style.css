@@ -1,0 +1,217 @@
+
+.container1{
+    width:50%;
+    max-width: 50%;
+    height: 40%;
+    max-height: 40%;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #888888;
+    background-color: #e4e4e4;
+    margin-bottom: 10px;margin-top: 10px;
+    padding-bottom: 5px;padding-top: 5px;
+}
+@media(max-width: 320px)  {
+    .container{
+        border:0px;
+    }
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+header .logo{
+    float: left;
+    margin-top: 40px;
+}
+.wrapper{
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  
+}
+.bodyclass{
+    background-color: #333;
+}
+.homecontainer{
+    width:90%;
+    max-width: 90%;
+    height: 40%;
+    max-height: 40%;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #888888;
+    background-color: #e4e4e4;
+    margin-left: 70px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+/*  Define the background color for all the ODD background rows  */
+.TFtable tr:nth-child(odd){
+    background: #F3F3F3;;
+}
+/*  Define the background color for all the EVEN background rows  */
+.TFtable tr:nth-child(even){
+    background: #dae5f4;
+}
+.TFtable th{
+    background-color: #333;
+}
+.TFtable td:nth-child(7){
+    background-color: white;
+}
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px;color: red; }
+.right-addon input { padding-right: 30px; }
+.tabs {
+    width:100%;
+
+    width: 100%;
+}
+.tab-links li {
+
+    float:left;
+    list-style:none;
+    width: 50%;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+    width: 100%;
+}
+.tab-links a:hover {
+    background:#a7cce5;
+    text-decoration:none;
+}
+.tab-links a {
+    padding:5px 20px;
+    display:inline-block;
+
+    border-radius:3px 3px 0px 0px;
+    background:#7FB5DA;
+    font-size:16px;
+    font-weight:600;
+    color:#4c4c4c;
+    transition:all linear 0.15s;
+    width: 100%;
+}
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+.tab-links a:hover {
+    background:#a7cce5;
+    text-decoration:none;
+}
+.tab-content {
+    padding:10px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+.guest th:first-child,.guest td:first-child,.guest td:nth-child(2),.guest td:nth-child(3),.guest td:nth-child(4){
+
+    border: 0px;
+}
+.owner th:first-child,.owner td:first-child,.owner td:nth-child(2){
+
+    border: 0px;
+}
+
+.h3style{
+    text-align: center;
+    margin-left: 500px;
+}
+.headingstyle{
+    background-color: white;
+    color: #002a80;
+    font-size: xx-large
+}
+.seatingtablewidth{
+ width: 60%;
+ display: none;
+margin-left: 280px;
+margin-right: 100px;
+}
+.reservationlist{
+ width: 90%;
+ 
+margin-left: 70px;
+margin-right: 40px;
+}
+.headertext{
+    color: white;
+}
+
+.text {
+  background: #fff;
+  border-radius: 50%;
+  height: 220px;
+  left: 115px;
+  padding: 75px;
+  position: absolute;
+  text-align: center;
+  top: 115px;
+  width: 220px;
+}
+.effect{
+	border-radius: 25px;
+}
+.tableffect{
+	
+	 box-shadow: 10px 10px 5px #888888;
+}
+.newprofile{
+	 width: 1100px;
+    height: 500px;
+    border-radius: 25px;
+	 box-shadow: 10px 10px 5px #888888;
+}
+table tr:last-child td:first-child {
+    -moz-border-radius-bottomleft:10px;
+    -webkit-border-bottom-left-radius:10px;
+    border-bottom-left-radius:10px
+}
+
+table tr:last-child td:last-child {
+    -moz-border-radius-bottomright:10px;
+    -webkit-border-bottom-right-radius:10px;
+    border-bottom-right-radius:10px
+}

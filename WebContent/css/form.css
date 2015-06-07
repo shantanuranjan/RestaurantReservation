@@ -1,0 +1,226 @@
+
+/*******************************************************************************************************************************/
+.fclass{
+	width: 100%
+}
+.fcol{
+	width: 50%
+}
+.fcolbutton{
+	width: 20%
+}
+.headingmodal{
+
+	color: #002a80;
+    font-size: xx-large
+}
+.formclass{
+	position: relative;
+}
+
+.formclass:before,
+.formclass:after{
+	content: " "; display: table; 
+}
+
+.formclass{
+	clear: both;
+}
+.formcolumn{
+	
+	width: 28%;
+	padding: 10px 30px;
+	float: left;
+}
+.formcolumnupdate{
+	
+	width: 50%;
+	padding-left:4px;
+	float: left;
+}
+.formclass label {
+	display: block;
+	padding: 40px 5px 5px 2px;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.formclass input,
+.formclass textarea,
+.formclass select {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 1.4em;
+	padding: 5px 10px;
+	color: black;
+	display: block;
+	width: 100%;
+	background: transparent;
+}
+
+.formclass input,
+.formclass textarea {
+	border: 3px solid #fff;
+}
+
+.formclass textarea {
+	min-height: 200px;
+}
+
+.formclass input:focus,
+.formclass textarea:focus,
+.formclass label:active + input,
+.formclass label:active + textarea {
+	outline: none;
+	border: 3px solid #10689a;
+}
+
+.formclass select:focus {
+	outline: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #10689a;
+    font-style: italic;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #10689a;
+    font-style: italic;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #10689a;
+    font-style: italic;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #10689a;
+    font-style: italic;
+}
+
+.cbp-mc-submit-wrap {
+	text-align: center;
+	padding-top: 40px;
+	clear: both;
+}
+
+.formclass input.cbp-mc-submit {
+	background: #10689a;
+	border: none;
+	color: #fff;
+	width: auto;
+	cursor: pointer;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 1.1em;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+
+.formclass input.cbp-mc-submit:hover {
+	background: #1478b1;
+}
+
+@media screen and (max-width: 70em) {
+	.formcolumn {
+		width: 50%;
+	}
+	.formcolumn:nth-child(3) {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 48em) {
+	.formcolumn {
+		width: 100%;
+		padding: 10px;
+	}
+}
+
+/*    footer    */
+footer{
+    width: 100%;
+    margin-top: 100px;
+    padding: 100px 0;
+    background: #3b3b3b;
+    overflow: hidden;
+}
+
+footer section{
+    display: block;
+    width: 230px;
+    margin-right: 60px;
+    float: left;
+}
+
+footer section:last-child{
+    margin-right: 0;
+}
+
+footer .adress{
+    color: #fff;
+    font-family: "aleo-regular", arial;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+footer .adress .location{
+    color: #ebebeb;
+    font-family: "aleo-light", arial;
+    font-weight: lighter;
+}
+
+footer .adress .phone{
+    font-family: "aleo-bold", arial;
+    font-weight: bold;
+}
+
+footer .footer_nav ul{
+    list-style: none;
+}
+
+footer .footer_nav ul li{
+    display: block;
+    margin-bottom: 18px;
+}
+
+footer .footer_nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: "aleo-regular", arial;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+footer .footer_nav ul li a:hover{
+    border-bottom: 2px solid #FFF;
+}
+
+footer .copyrights .footer_logo{
+    margin-bottom: 30px;
+}
+
+footer .copyrights p{
+    color: #ebebeb;
+    font-family: "aleo-light", arial;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
+
+footer .copyrights p a{
+    font-family: "aleo-bold", arial;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
